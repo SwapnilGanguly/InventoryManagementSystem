@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Inventory Management System</h1>
+        <nav>
+            <button onclick="showSection('addProduct')">Add Product</button>
+            <button onclick="showSection('viewInventory')">View Inventory</button>
+            <button onclick="showSection('placeOrder')">Place Order</button>
+            <button onclick="showSection('restock')">Restock</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="addProduct" class="section hidden">
+            <h2>Add Product</h2>
+            <form id="addProductForm">
+                <input type="text" id="productName" placeholder="Product Name" required>
+                <input type="text" id="productDescription" placeholder="Description">
+                <input type="number" id="productPrice" placeholder="Price" required>
+                <input type="number" id="productQuantity" placeholder="Quantity" required>
+                <button type="button" onclick="addProduct()">Add Product</button>
+            </form>
+            <div id="addProductResult"></div>
+        </section>
+
+        <section id="viewInventory" class="section hidden">
+            <h2>Inventory</h2>
+            <button onclick="viewInventory()">Refresh Inventory</button>
+            <div id="inventoryList" class="inventory-table-container">
+                <!-- Inventory items will be inserted here dynamically by JavaScript -->
+            </div>
+        </section>
+        
+
+        <section id="placeOrder" class="section hidden">
+            <h2>Place Order</h2>
+            <form id="placeOrderForm">
+                <input type="text" id="customerName" placeholder="Customer Name" required>
+                <input type="number" id="orderProductId" placeholder="Product ID" required>
+                <input type="number" id="orderQuantity" placeholder="Quantity Ordered" required>
+                <button type="button" onclick="placeOrder()">Place Order</button>
+            </form>
+            <div id="placeOrderResult"></div>
+        </section>
+
+        <section id="restock" class="section hidden">
+            <h2>Restock Product</h2>
+            <form id="restockForm">
+                <input type="number" id="restockProductId" placeholder="Product ID" required>
+                <input type="number" id="restockQuantity" placeholder="Quantity" required>
+                <button type="button" onclick="restockProduct()">Restock Product</button>
+            </form>
+            <div id="restockResult"></div>
+        </section>
+        
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

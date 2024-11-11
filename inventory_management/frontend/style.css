@@ -1,0 +1,225 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+    color: #333;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #4CAF50;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+nav button {
+    background-color: white;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+nav button:hover {
+    background-color: #45a049;
+    color: white;
+}
+
+/* Main content styling */
+main {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Section styling */
+.section {
+    display: none;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.section.hidden {
+    display: none;
+}
+
+.section:not(.hidden) {
+    display: block;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+form input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Result message styling */
+#addProductResult,
+#placeOrderResult,
+#restockResult,
+#inventoryList {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#addProductResult.success,
+#placeOrderResult.success,
+#restockResult.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+#addProductResult.error,
+#placeOrderResult.error,
+#restockResult.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav button {
+        width: 100%;
+    }
+}
+
+/* Styling for View Inventory */
+#viewInventory {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#viewInventory button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+#viewInventory button:hover {
+    background-color: #45a049;
+}
+
+Inventory table container
+.inventory-table-container {
+    overflow-x: auto;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.inventory-table th, .inventory-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.inventory-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.inventory-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.inventory-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling for inventory empty message */
+#inventoryList.empty {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+}
